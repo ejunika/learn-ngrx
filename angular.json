@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "learn-ngrx"
+    }
+  },
+  "defaultProject": "learn-ngrx",
+  "cli": {
+    "analytics": false
+  }
 }

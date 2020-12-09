@@ -1,0 +1,31 @@
+<h3>Customers</h3>
+
+<table class="table table-hover" aria-describedby="">
+    <thead>
+        <tr class="table-primary">
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Address</th>
+            <th scope="col">Membership</th>
+            <th scope="col">Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of (customers$ | async)">
+            <th scope="row">{{ customer.name }}</th>
+            <td>{{ customer.phone }}</td>
+            <td>{{ customer.address }}</td>
+            <td>{{ customer.membership }}</td>
+            <th scope="colgroup">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group mr-2" role="group" aria-label="Second group">
+                        <button (click)="deleteCustomer(customer)" type="button"
+                            class="btn btn-sm btn-outline-danger mr-1">Delete</button>
+                        <button (click)="editCustomer(customer)" type="button"
+                            class="btn btn-sm btn-outline-info">Edit</button>
+                    </div>
+                </div>
+            </th>
+        </tr>
+    </tbody>
+</table>
